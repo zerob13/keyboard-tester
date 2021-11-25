@@ -6,7 +6,7 @@
       :key="idx"
     >
       <div
-        class="whitespace-pre-wrap flex w-10 place-content-center h-10 text-sm ml-2 box-border cursor-pointer border"
+        class="whitespace-pre-wrap flex w-13 place-content-center h-13 text-sm ml-2 box-border cursor-pointer border"
         v-for="kk in line"
         :key="kk.k"
         :class="{
