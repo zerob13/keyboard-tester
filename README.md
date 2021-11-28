@@ -1,5 +1,11 @@
 # keyboard-tester
 
+A vue3 keyboard tester
+
+## Live demo
+
+[https://blog.zerob13.com/assets/kb/](https://blog.zerob13.com/assets/kb/)
+
 ## Project setup
 ```
 yarn install
@@ -20,5 +26,4 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
