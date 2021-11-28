@@ -172,13 +172,13 @@ export default defineComponent({
     width: 85px;
   }
   &.key-Backspace {
-    width: 75px;
+    width: 88px;
   }
   &.key-Tab {
-    width: 75px;
+    width: 88px;
   }
   &.key-CapsLock {
-    width: 88px;
+    width: 100px;
   }
   &.key-ShiftRight,
   &.key-ShiftLeft {
