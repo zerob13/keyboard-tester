@@ -1,10 +1,8 @@
 <template>
-  <div
-    class="full-wrap my-auto mx-auto flex flex-row border-3 border-dark-100 border-solid rounded-1xl"
-  >
-    <div class="keyboard bg-grey-50 flex flex-col justify-center">
+  <div class="full-wrap my-auto mx-auto flex flex-row rounded-1xl">
+    <div class="keyboard flex flex-col justify-center">
       <div
-        class="flex flex-row keyboard-line"
+        class="flex flex-row keyboard-line my-1"
         v-for="(line, idx) in keys"
         :key="idx"
       >
@@ -15,7 +13,7 @@
           :class="[
             {
               normal: !keyState.has(kk.k),
-              'border-red-500 active text-gray-100': keyState.has(kk.k),
+              active: keyState.has(kk.k),
               '-two-line': kk.v.indexOf('\n') >= 0,
               '-pressed': pressed.has(kk.k),
             },
@@ -26,9 +24,9 @@
         </div>
       </div>
     </div>
-    <div class="keyboard-part2 bg-grey-50 flex flex-col justify-center">
+    <div class="keyboard-part2 flex flex-col justify-center">
       <div
-        class="flex flex-row keyboard-line"
+        class="flex flex-row keyboard-line my-1"
         v-for="(line, idx) in part2Keys"
         :key="idx"
       >
@@ -39,7 +37,7 @@
           :class="[
             {
               normal: !keyState.has(kk.k),
-              'border-red-500 active text-gray-100': keyState.has(kk.k),
+              active: keyState.has(kk.k),
               '-two-line': kk.v.indexOf('\n') >= 0,
               '-pressed': pressed.has(kk.k),
             },
@@ -50,9 +48,9 @@
         </div>
       </div>
     </div>
-    <div class="keyboard-num bg-grey-50 flex flex-col justify-center">
+    <div class="keyboard-num flex flex-col justify-center">
       <div
-        class="flex flex-row keyboard-line"
+        class="flex flex-row keyboard-line my-1"
         v-for="(line, idx) in numPadKey"
         :key="idx"
       >
@@ -63,7 +61,7 @@
           :class="[
             {
               normal: !keyState.has(kk.k),
-              'border-red-500 active text-gray-100': keyState.has(kk.k),
+              active: keyState.has(kk.k),
               '-two-line': kk.v.indexOf('\n') >= 0,
               '-pressed': pressed.has(kk.k),
             },
@@ -131,18 +129,31 @@ export default defineComponent({
 });
 </script>
 <style lang="scss" scoped>
+.full-wrap {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
+  background: #eee;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  padding-left: 50px;
+  padding-right: 50px;
+  transition: 0.4s;
+  transform: scale(0.9);
+}
 .keyboard {
-  width: 760px;
+  width: 850px;
   height: 310px;
 }
 .keyboard-part2 {
-  width: 164px;
+  width: 176px;
   height: 310px;
   margin-left: 10px;
 }
 .keyboard-num {
   margin-left: 10px;
-  width: 220px;
+  width: 232px;
   height: 310px;
   padding-top: 50px;
 }
@@ -150,35 +161,41 @@ export default defineComponent({
 .key {
   width: 50px;
   height: 50px;
-  float: left;
+  background: #eee;
+  user-select: none;
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001, inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001, inset 0px 0px 0px 0px #fff9,
+    inset 0px 0px 0px 0px #0001;
   cursor: pointer;
-  color: #000000;
-  text-align: center;
-  margin-left: 2px;
-  border-radius: 4px;
-  font-family: Arial;
+  font-size: 14px;
   line-height: 48px;
-  font-weight: 500;
+  box-sizing: border-box;
+  color: #9f9f9f;
   &.normal {
-    background-color: #fffff4;
+    background: #eee;
   }
   &.active {
-    background: #ee786e;
+    box-shadow: 0px 0px 0px 0px #fff9, 0px 0px 0px 0px #fff9,
+      0px 0px 0px 0px #0001, 0px 0px 0px 0px #0001,
+      inset -7px -7px 20px 0px #fff9, inset -4px -4px 5px 0px #fff9,
+      inset 7px 7px 20px 0px #0003, inset 4px 4px 5px 0px #0001;
+    transition: 0.2s;
   }
   &.-pressed {
-    background-color: #f4ffff;
+    background: #eee;
   }
   &.key-Escape {
     width: 85px;
   }
   &.key-Backspace {
-    width: 88px;
+    width: 75px;
   }
   &.key-Tab {
-    width: 88px;
+    width: 75px;
   }
   &.key-CapsLock {
-    width: 100px;
+    width: 88px;
   }
   &.key-ShiftRight,
   &.key-ShiftLeft {
@@ -196,18 +213,18 @@ export default defineComponent({
     margin-left: 25px;
   }
   &.key-Enter {
-    width: 88px;
+    width: 100px;
   }
   &.key-ArrowUp {
-    margin-top: 50px;
-    margin-left: 50px;
+    margin-top: 60px;
+    margin-left: 66px;
   }
   &.-two-line {
     line-height: 20px;
     padding-top: 4px;
   }
   &.key-Numpad0 {
-    width: 102px;
+    width: 108px;
   }
 }
 </style>
