@@ -10,8 +10,8 @@
         v-for="kk in line"
         :key="kk.k"
         :class="{
-          'border-gray-500 ': activeKey != kk.k,
-          'border-red-500 bg-red-200 text-gray-100': activeKey == kk.k,
+          'border-gray-500 ': !keyState.has(kk.k),
+          'border-red-500 bg-red-200 text-gray-100': keyState.has(kk.k),
         }"
       >
         {{ kk.v }}
@@ -29,25 +29,32 @@ export default defineComponent({
   setup(props, context) {
     const state = reactive({
       keys: KEYMAP,
-      activeKey: "",
+      keyState: new Set<string>(),
     });
     const onKeyDown = (e: KeyboardEvent) => {
       // console.log("keydown", e);
-      state.activeKey = e.code;
       e.preventDefault();
       e.stopPropagation();
+      state.keyState.add(e.code);
+      return true;
     };
     const onKeyUp = (e: KeyboardEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
       console.log("keyup", e.code);
-      state.activeKey = "";
+      state.keyState.delete(e.code);
+      if (e.code === "MetaLeft" || e.code === "MetaRight") {
+        state.keyState.clear();
+      }
+      return true;
     };
     onMounted(() => {
-      document.addEventListener("keydown", onKeyDown);
-      document.addEventListener("keyup", onKeyUp);
+      document.onkeyup = onKeyUp;
+      document.onkeydown = onKeyDown;
     });
     onUnmounted(() => {
-      document.removeEventListener("keydown", onKeyDown);
-      document.removeEventListener("keyup", onKeyUp);
+      // document.removeEventListener("keydown", onKeyDown);
+      // document.removeEventListener("keyup", onKeyUp);
     });
     return {
       ...toRefs(state),
