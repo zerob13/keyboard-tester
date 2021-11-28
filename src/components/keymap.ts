@@ -52,14 +52,6 @@ export const KEYMAP = [
       v: "F12",
       k: "F12",
     },
-    {
-      v: "Prt\nScr",
-      k: "PrintScreen",
-    },
-    {
-      v: "Scroll\nLock",
-      k: "ScrollLock",
-    },
   ],
   [
     {
@@ -118,13 +110,6 @@ export const KEYMAP = [
       v: "←\nBS",
       k: "Backspace",
     },
-    { v: "Insert", k: "Insert" },
-    { v: "Home", k: "Home" },
-    { v: "Page\nUp", k: "PageUp" },
-    { v: "Num\nLock", k: "NumLock" },
-    { v: "/", k: "NumpadDivide" },
-    { v: "*", k: "NumpadMultiply" },
-    { v: "-", k: "NumpadSubtract" },
   ],
   [
     { v: "Tab", k: "Tab" },
@@ -141,16 +126,9 @@ export const KEYMAP = [
     { v: "{\n[", k: "BracketLeft" },
     { v: "}\n]", k: "BracketRight" },
     { v: "|\n\\", k: "Backslash" },
-    { v: "Delete", k: "Delete" },
-    { v: "End", k: "End" },
-    { v: "Page\nDown", k: "PageDown" },
-    { v: "7", k: "Numpad7" },
-    { v: "8", k: "Numpad8" },
-    { v: "9", k: "Numpad9" },
-    { v: "+", k: "NumpadAdd" },
   ],
   [
-    { v: "Caps\nLock", k: "CapsLock" },
+    { v: "Caps Lock", k: "CapsLock" },
     { v: "A", k: "KeyA" },
     { v: "S", k: "KeyS" },
     { v: "D", k: "KeyD" },
@@ -163,10 +141,6 @@ export const KEYMAP = [
     { v: ":\n;", k: "Semicolon" },
     { v: "\"\n'", k: "Quote" },
     { v: "↵\nEnter", k: "Enter" },
-    { v: "4", k: "Numpad4" },
-    { v: "5", k: "Numpad5" },
-    { v: "6", k: "Numpad6" },
-    { v: "Num\nEnter", k: "NumpadEnter" },
   ],
   [
     { v: "Shift", k: "ShiftLeft" },
@@ -181,9 +155,6 @@ export const KEYMAP = [
     { v: ">\n.", k: "Period" },
     { v: "?\n/", k: "Slash" },
     { v: "Shift", k: "ShiftRight" },
-    { v: "↑\nup", k: "ArrowUp" },
-    { v: "0", k: "Numpad0" },
-    { v: ".\nDel", k: "NumpadDecimal" },
   ],
   [
     { v: "Ctrl\ncontrol", k: "ControlLeft" },
@@ -194,8 +165,67 @@ export const KEYMAP = [
     { v: "Win\nMeta", k: "MetaRight" },
     { v: "Menu", k: "ContextMenu" },
     { v: "Ctrl\ncontrol", k: "ControlRight" },
+  ],
+];
+export const PART_TWO = [
+  [
+    {
+      v: "Prt\nScr",
+      k: "PrintScreen",
+    },
+    {
+      v: "Scroll\nLock",
+      k: "ScrollLock",
+    },
+    {
+      v: "Pause",
+      k: "Pause",
+    },
+  ],
+  [
+    { v: "Insert", k: "Insert" },
+    { v: "Home", k: "Home" },
+    { v: "Page\nUp", k: "PageUp" },
+  ],
+  [
+    { v: "Delete", k: "Delete" },
+    { v: "End", k: "End" },
+    { v: "Page\nDown", k: "PageDown" },
+  ],
+  [{ v: "↑\nup", k: "ArrowUp" }],
+  [
     { v: "↓\ndown", k: "ArrowDown" },
     { v: "←\nleft", k: "ArrowLeft" },
     { v: "→\nright", k: "ArrowRight" },
+  ],
+];
+
+export const NUMBER_PAD = [
+  [
+    { v: "Num\nLock", k: "NumLock" },
+    { v: "/", k: "NumpadDivide" },
+    { v: "*", k: "NumpadMultiply" },
+    { v: "-", k: "NumpadSubtract" },
+  ],
+  [
+    { v: "7", k: "Numpad7" },
+    { v: "8", k: "Numpad8" },
+    { v: "9", k: "Numpad9" },
+    { v: "+", k: "NumpadAdd" },
+  ],
+  [
+    { v: "4", k: "Numpad4" },
+    { v: "5", k: "Numpad5" },
+    { v: "6", k: "Numpad6" },
+    { v: "Num\nEnter", k: "NumpadEnter" },
+  ],
+  [
+    { v: "1", k: "Numpad1" },
+    { v: "2", k: "Numpad2" },
+    { v: "3", k: "Numpad3" },
+  ],
+  [
+    { v: "0", k: "Numpad0" },
+    { v: ".\nDel", k: "NumpadDecimal" },
   ],
 ];
