@@ -97,6 +97,11 @@ export default defineComponent({
       e.stopPropagation();
       state.keyState.add(e.code);
       state.pressed.add(e.code);
+      context.emit("lastkeyPressed", {
+        code: e.code,
+        key: e.key,
+        keyCode: e.keyCode,
+      });
       return true;
     };
     const onKeyUp = (e: KeyboardEvent) => {
