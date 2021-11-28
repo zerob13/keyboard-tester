@@ -194,8 +194,8 @@ export const PART_TWO = [
   ],
   [{ v: "↑\nup", k: "ArrowUp" }],
   [
-    { v: "↓\ndown", k: "ArrowDown" },
     { v: "←\nleft", k: "ArrowLeft" },
+    { v: "↓\ndown", k: "ArrowDown" },
     { v: "→\nright", k: "ArrowRight" },
   ],
 ];
